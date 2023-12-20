@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export default function FormMusicas() {
+export default function FormFilmes() {
     const [nome,setNome] = useState("");
-    const [artista,setArtista] = useState("");
+    const [diretor,setDiretor] = useState("");
 
-    const cadastrarMusicas = event => {
+    const cadastrarFilmes = event => {
         event.preventDefault();
 
-        fetch('/api/musicas', {
+        fetch('/api/filmes', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json, text/plain, */*',
@@ -15,26 +15,26 @@ export default function FormMusicas() {
                 },
                 body: JSON.stringify({
                     nome:nome,
-                    artista:artista
+                    diretor:diretor
                 })
         }).then(res => res.json())
-        .then(setNome(""),setArtista(""));
+        .then(setNome(""),setDiretor(""));
        
 
     }
 
     return(
-        <form onSubmit={cadastrarMusicas}>
+        <form onSubmit={cadastrarFilmes}>
             <label htmlFor="nome" className=" w3-margin">Nome:</label>
             <input type="text" className="w3-input w3-border w3-margin-bottom" name="nome"
             value={nome}
             onChange={(ev) => setNome(ev.target.value)}>                
             </input>
             <br />
-            <label htmlFor="artista" className=" w3-margin">Artista:</label>
-            <input type="text"className="w3-input w3-border w3-margin-bottom" name="artista"
-            value={artista}
-            onChange={(ev) => setArtista(ev.target.value)}>                
+            <label htmlFor="diretor" className=" w3-margin">Diretor:</label>
+            <input type="text"className="w3-input w3-border w3-margin-bottom" name="diretor"
+            value={diretor}
+            onChange={(ev) => setDiretor(ev.target.value)}>                
             </input>
             <br />
             <input type="submit"></input>

@@ -6,8 +6,9 @@ export default function CardSoundtracks ({tracks}){
         <div>
             <div> 
                 <div>
-                    <h2 className="w3-margin">{tracks.nome_musicas}</h2>
-                    <h5 className=" w3-margin">Artista:{tracks.artista}</h5>
+                    <h3>{tracks.nome_filmes}</h3>
+                    <h2 className="w3-margin w3-card w3-green">{tracks.nome_musicas}</h2>
+                    <h4 className=" w3-margin">Artista:{tracks.artista}</h4>
                 </div>
             </div>
        
